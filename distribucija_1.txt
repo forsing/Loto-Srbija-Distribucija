@@ -1,0 +1,54 @@
+Loto 7/39 — 9 distribucija nad CSV-om
+============================================================
+CSV: /data/loto7_4622_k42.csv
+Broj izvlačenja: 4622
+Opseg: 1..39    po izvlačenju: 7
+Plot: /distribucija_1.png
+
+KORAK 3 — fit testovi (p > 0.05 ⇒ POGODNA):
+Distribucija Loto feature              Param                       p-value   Status
+------------------------------------------------------------------------------------------
+Normal       suma_7                    μ=140.51, σ=27.64           0.0593    POGODNA
+Bernoulli    ima_7                     p̂=0.182                     1.0000    POGODNA
+Binomial     parnih                    n=7, p̂=0.487                0.0000    NEPOGODNA
+Geometric    gap do 7                  p̂=0.182                     0.5271    POGODNA
+Poisson      # 7 u W=20                λ=3.638                     0.0000    NEPOGODNA
+Exponential  gapovi 1..39              scale=5.57                  0.0000    NEPOGODNA
+Gamma        vreme do 5. pojave        shape=6.33, scale=4.40      0.0000    NEPOGODNA
+Beta         empir. freq. brojeva      α=664.03, β=25233.08        0.9715    POGODNA
+Uniform      svi brojevi 1..39         E≈829.6/broj                0.1384    POGODNA
+
+Pogodne distribucije: ['Normal', 'Bernoulli', 'Geometric', 'Beta', 'Uniform']
+
+KORAK 4 — prave verovatnoće iz fitovanih distribucija:
+   Per-broj P izvor:  Beta-Bernoulli posterior + recency  (α=664.029, β=25233.082, γ=5, W=50)
+   Uniform baseline:  0.17949
+   Enumeracija:       C(13,7) = 1716 kandidata
+   TOP_POOL kandidati: [8, 11, 16, 22, 23, 24, 29, 33, 34, 35, 37, 38, 39]
+
+NEXT predikcija: [8, 11, 16, 22, 23, 24, 34]
+   log-skor       = -25.0093
+   suma           = 138   (μ=140.5, σ=27.6)
+   parnih         = 5/7
+
+Faktori log-skora za izabranu kombinaciju:
+   • Σ log P(k)            = -20.7670
+   • log N(sum; μ, σ)      = -4.2423
+
+Top 13 brojeva po per-broj P (baseline 0.17949):
+Broj  P(next)     P/baseline  Count   Recent  Gap   
+8     0.05259     0.2930      909     9       9     
+23    0.05207     0.2901      903     7       1     
+34    0.05168     0.2879      871     11      0     
+24    0.05145     0.2866      839     16      1     
+38    0.05135     0.2861      841     15      0     
+16    0.05116     0.2850      835     15      4     
+33    0.05109     0.2847      853     11      5     
+39    0.05096     0.2839      849     11      6     
+29    0.05090     0.2836      847     11      8     
+11    0.05073     0.2827      857     8       6     
+22    0.05067     0.2823      850     9       3     
+37    0.05064     0.2821      859     7       8     
+35    0.05060     0.2819      843     10      7     
+
+Ukupno vreme: 0:00:07 (7.9 s)
