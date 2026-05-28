@@ -37,7 +37,7 @@ T0 = time.time()
 SEED = 42
 np.random.seed(SEED)
 
-CSV_PATH = "/Users/4c/Desktop/GHQ/data/loto7_4622_k42.csv"
+CSV_PATH = "/data/loto7_4622_k42.csv"
 HERE = os.path.dirname(os.path.abspath(__file__))
 PNG_PATH = os.path.join(HERE, "distribucija_1.png")
 TXT_PATH = os.path.join(HERE, "distribucija_1.txt")
@@ -508,15 +508,15 @@ min      48.00     0.00     0.00
 75%     160.00     0.00     4.00
 max     231.00     1.00     7.00
 
-Plot saved → /Users/4c/Desktop/GHQ/DISTRIBUCIJA/distribucija_1.png
+Plot saved → /distribucija_1.png
 
 KORAK 3 — testovi fita (p > 0.05 ⇒ POGODNA):
 Distribucija Loto feature              Param                       p-value   Status
 ------------------------------------------------------------------------------------------
 Normal       suma_7                    μ=140.51, σ=27.64           0.0593    POGODNA
-Bernoulli    ima_7                     p̂=0.182                    1.0000    POGODNA
-Binomial     parnih                    n=7, p̂=0.487               0.0000    NEPOGODNA
-Geometric    gap do 7                  p̂=0.182                    0.5271    POGODNA
+Bernoulli    ima_7                     p̂=0.182                     1.0000    POGODNA
+Binomial     parnih                    n=7, p̂=0.487                0.0000    NEPOGODNA
+Geometric    gap do 7                  p̂=0.182                     0.5271    POGODNA
 Poisson      # 7 u W=20                λ=3.638                     0.0000    NEPOGODNA
 Exponential  gapovi 1..39              scale=5.57                  0.0000    NEPOGODNA
 Gamma        vreme do 5. pojave        shape=6.33, scale=4.40      0.0000    NEPOGODNA
@@ -530,7 +530,7 @@ Uniform baseline: 0.17949
 
 Enumeracija: C(13,7) = 1716 kandidata
 
-NEXT predikcija: [8, 11, 16, 22, 23, 24, 34]
+NEXT predikcija: [8, x, 16, y, 23, z, 34]
   log-skor       = -25.0093
   suma           = 138   (μ=140.5, σ=27.6)
   parnih         = 5/7
@@ -550,14 +550,14 @@ Broj  P(next)     P/baseline  Count   Recent  Gap
 33    0.05109     0.2847      853     11      5     
 39    0.05096     0.2839      849     11      6     
 29    0.05090     0.2836      847     11      8     
-11    0.05073     0.2827      857     8       6     
-22    0.05067     0.2823      850     9       3     
-37    0.05064     0.2821      859     7       8     
+x     0.05073     0.2827      857     8       6     
+y     0.05067     0.2823      850     9       3     
+z     0.05064     0.2821      859     7       8     
 35    0.05060     0.2819      843     10      7     
 
 Ukupno vreme: 0:00:07 (7.9 s)
 
-TXT saved → /Users/4c/Desktop/GHQ/DISTRIBUCIJA/distribucija_1.txt
+TXT saved → /distribucija_1.txt
 """
 
 
