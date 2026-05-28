@@ -24,9 +24,9 @@ KORAK 4 — prave verovatnoće iz fitovanih distribucija:
    Per-broj P izvor:  Beta-Bernoulli posterior + recency  (α=664.029, β=25233.082, γ=5, W=50)
    Uniform baseline:  0.17949
    Enumeracija:       C(13,7) = 1716 kandidata
-   TOP_POOL kandidati: [8, 11, 16, 22, 23, 24, 29, 33, 34, 35, 37, 38, 39]
+   TOP_POOL kandidati: [8, x, 16, y, 23, z, 29, 33, 34, 35, 37, 38, 39]
 
-NEXT predikcija: [8, 11, 16, 22, 23, 24, 34]
+NEXT predikcija: [8, x, 16, y, 23, z, 34]
    log-skor       = -25.0093
    suma           = 138   (μ=140.5, σ=27.6)
    parnih         = 5/7
@@ -37,11 +37,11 @@ Faktori log-skora za izabranu kombinaciju:
 
 Top 13 brojeva po per-broj P (baseline 0.17949):
 Broj  P(next)     P/baseline  Count   Recent  Gap   
-8     0.05259     0.2930      909     9       9     
+x     0.05259     0.2930      909     9       9     
 23    0.05207     0.2901      903     7       1     
-34    0.05168     0.2879      871     11      0     
+y    0.05168     0.2879      871     11      0     
 24    0.05145     0.2866      839     16      1     
-38    0.05135     0.2861      841     15      0     
+z    0.05135     0.2861      841     15      0     
 16    0.05116     0.2850      835     15      4     
 33    0.05109     0.2847      853     11      5     
 39    0.05096     0.2839      849     11      6     
